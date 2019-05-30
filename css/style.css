@@ -7,6 +7,7 @@
 #slideshowSlider{
   max-width: 1000px;
   margin: 0 auto;
+  overflow: hidden;
   height: 600px;
   position: relative;
 }
@@ -31,11 +32,10 @@
 
 .slideshowContainter{
   position: relative;
-  left: 0;
+  transform: translateX(0);
   width: 3000px;
   height: 600px;
-  transition: 3s;
-  /* transform: translateX(1000px); */
+  left: -1000px;
 }
 
 .slideshowContainter::after{
@@ -44,12 +44,17 @@
   content: '';
   }
 
-.slideshowItem{
-  /* width: 1000px; */
+.slide{
+  width: 1000px;
   float: left;
 }
 
-.slideshowItem img{
+.slide img{
   width: 800px;
   height: 600px;
+  /* max-width: 100%; */
+}
+
+.transition{
+  transition: .7s;
 }
